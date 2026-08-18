@@ -11,11 +11,12 @@ release:
 
 EVEREST_REPO_URL ?= https://github.com/openeverest/openeverest-operator
 CRD_DIR ?= config/crd
-CRD_VERSION ?= main
+CRD_VERSION ?= release-2.0
 CRD_SUBCHART_DIR ?= $(PWD)
 .PHONY: crds-gen
 crds-gen:
 	@crd_tmp_file="crd.tmp.yaml"; \
+	rm -f $(CRD_SUBCHART_DIR)/templates/*.yaml; \
 	docker run --rm \
 		-v "$(CRD_SUBCHART_DIR)":/workspace \
 		-w /workspace \

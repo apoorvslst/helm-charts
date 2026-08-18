@@ -103,7 +103,7 @@ link-crds:
 
 EVEREST_REPO_URL ?= https://github.com/openeverest/openeverest-operator
 CRD_DIR ?= config/crd
-CRD_VERSION ?= main
+CRD_VERSION ?= release-2.0
 .PHONY: crds-gen
 crds-gen:
 	EVEREST_REPO_URL=$(EVEREST_REPO_URL) \
